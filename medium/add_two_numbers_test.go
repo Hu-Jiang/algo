@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestAddTwoNumber(t *testing.T) {
+func TestAddTwoNumbers(t *testing.T) {
 	tl1 := &ListNode{Val: 2}
 	tl1.Next = &ListNode{Val: 4}
 	tl1.Next.Next = &ListNode{Val: 3}
@@ -19,30 +19,31 @@ func TestAddTwoNumber(t *testing.T) {
 	tl1_tl2.Next.Next = &ListNode{Val: 8}
 
 	tests := []struct {
-		l1       *ListNode
-		l2       *ListNode
-		wantList *ListNode
+		l1   *ListNode
+		l2   *ListNode
+		want *ListNode
 	}{
 		{
-			l1:       tl1,
-			l2:       tl2,
-			wantList: tl1_tl2,
+			l1:   tl1,
+			l2:   tl2,
+			want: tl1_tl2,
 		},
 		{
-			l1:       tl1,
-			l2:       nil,
-			wantList: tl1,
+			l1:   tl1,
+			l2:   nil,
+			want: tl1,
 		},
 		{
-			l1:       nil,
-			l2:       nil,
-			wantList: nil,
+			l1:   nil,
+			l2:   nil,
+			want: nil,
 		},
 	}
 
-	for i, test := range tests {
-		if !reflect.DeepEqual(test.wantList, addTwoNumbers(test.l1, test.l2)) {
-			t.Fatalf("test %d, l1: %+v, l2: %+v, want: %+v, got: %+v", i, test.l1, test.l2, test.wantList, addTwoNumbers(test.l1, test.l2))
+	for i, tt := range tests {
+		got := addTwoNumbers(tt.l1, tt.l2)
+		if !reflect.DeepEqual(tt.want, got) {
+			t.Fatalf("case %d: got: %+v, want: %+v", i, got, tt.want)
 		}
 	}
 }
