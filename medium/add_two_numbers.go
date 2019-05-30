@@ -1,4 +1,4 @@
-package main
+package medium
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	var (

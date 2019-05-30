@@ -1,4 +1,4 @@
-package main
+package easy
 
 func addDigits(num int) int {
 	ans := 0
