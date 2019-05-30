@@ -2,6 +2,7 @@ package medium
 
 import "strconv"
 
+// ListNode represents node for singly-linked list.
 type ListNode struct {
 	Val  int
 	Next *ListNode
