@@ -27,7 +27,7 @@ func minDepth(root *TreeNode) int {
 }
 
 // minSmart returns a if b equals zero, or b if a equals zero.
-// otherwise it returns the minimum of a or b.
+// Otherwise it returns the minimum among a and b.
 func minSmart(a, b int) int {
 	if a == 0 {
 		return b
