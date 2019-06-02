@@ -56,7 +56,7 @@ func doIsSymmetric(t1, t2 *TreeNode) bool {
 // 		doIsSymmetric(t1.Left, t2.Right) &&
 // 		doIsSymmetric(t1.Right, t2.Left)
 // }
-
+//
 // The official soloution:
 //
 // Approach 1: Recursive
@@ -64,7 +64,7 @@ func doIsSymmetric(t1, t2 *TreeNode) bool {
 // public boolean isSymmetric(TreeNode root) {
 //     return isMirror(root, root);
 // }
-
+//
 // public boolean isMirror(TreeNode t1, TreeNode t2) {
 //     if (t1 == null && t2 == null) return true;
 //     if (t1 == null || t2 == null) return false;
