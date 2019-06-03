@@ -53,6 +53,36 @@ func threeSum(nums []int) [][]int {
 	return res
 }
 
+func threeSum_v1(nums []int) [][]int {
+	var res [][]int
+
+	len := len(nums)
+	for i := 0; i < len; i++ {
+		for j := i + 1; j < len; j++ {
+			for k := j + 1; k < len; k++ {
+				if nums[i]+nums[j]+nums[k] == 0 {
+					elem := []int{nums[i], nums[j], nums[k]}
+					sort.Ints(elem)
+					if !hasElement(res, elem) {
+						res = append(res, elem)
+					}
+				}
+			}
+		}
+	}
+
+	return res
+}
+
+func hasElement(res [][]int, elem []int) bool {
+	for _, v := range res {
+		if reflect.DeepEqual(v, elem) {
+			return true
+		}
+	}
+	return false
+}
+
 func threeSum_v2(nums []int) [][]int {
 	sort.Ints(nums)
 
@@ -100,34 +130,4 @@ func threeSum_v2(nums []int) [][]int {
 	}
 
 	return res
-}
-
-func threeSum_v1(nums []int) [][]int {
-	var res [][]int
-
-	len := len(nums)
-	for i := 0; i < len; i++ {
-		for j := i + 1; j < len; j++ {
-			for k := j + 1; k < len; k++ {
-				if nums[i]+nums[j]+nums[k] == 0 {
-					elem := []int{nums[i], nums[j], nums[k]}
-					sort.Ints(elem)
-					if !hasElement(res, elem) {
-						res = append(res, elem)
-					}
-				}
-			}
-		}
-	}
-
-	return res
-}
-
-func hasElement(res [][]int, elem []int) bool {
-	for _, v := range res {
-		if reflect.DeepEqual(v, elem) {
-			return true
-		}
-	}
-	return false
 }
