@@ -8,7 +8,7 @@ import (
 
 // Given a string representing a code snippet, you need to implement a tag validator
 // to parse the code and return whether it is valid. A code snippet is valid if all
-//  the following rules hold:
+// the following rules hold:
 //
 // 1. The code must be wrapped in a valid closed tag. Otherwise, the code is invalid.
 // 2. A closed tag (not necessarily valid) has exactly the following format :
@@ -86,21 +86,18 @@ func isValid(code string) bool {
 		return false
 	}
 
-	if code[0] != '<' {
+	if code[0] != '<' || code[len(code)-1] != '>' {
 		return false
 	}
 
 	ts := newStack()
 	i := 0
-	var firstTag, lastTag tagName
-	firstTagFlag := true
 	for i < len(code) {
+		if i != 0 && ts.isEmpty() {
+			return false
+		}
 		if code[i] == '<' {
-			if i+1 > len(code) {
-				return false
-			}
-
-			switch code[i+1] {
+			switch code[i+1] { // i+1 must be valid, because last item is '>'
 			case '!':
 				if i == 0 {
 					return false
@@ -126,7 +123,6 @@ func isValid(code string) bool {
 				if v.(tagName) != etag {
 					return false
 				}
-				lastTag = etag
 				i += len(etag) + 3
 			default:
 				stag, err := getStartTagName(code[i:])
@@ -136,10 +132,6 @@ func isValid(code string) bool {
 				if !stag.isValid() {
 					return false
 				}
-				if firstTagFlag {
-					firstTag = stag
-					firstTagFlag = false
-				}
 
 				ts.push(stag)
 				i += len(stag) + 2
@@ -147,14 +139,6 @@ func isValid(code string) bool {
 		} else {
 			i++
 		}
-	}
-
-	if len(firstTag) == 0 || len(lastTag) == 0 || firstTag != lastTag {
-		return false
-	}
-
-	if strings.LastIndex(code, string(lastTag))+len(lastTag)+1 != len(code) {
-		return false
 	}
 
 	return ts.isEmpty()

@@ -17,7 +17,10 @@ func TestIsValid(t *testing.T) {
 		{"<DIV>  unmatched start tag <B>  and unmatched end tag </C>  </DIV>", false},
 		{"<![CDATA[wahaha]]]><![CDATA[]> wahaha]]>", false},
 		{"<A></A><B></B>", false},
+		{"<A></A>A>", false},
+		{"<A></A><A></A>", false},
 		{"<A></A>>", false},
+		{"", false},
 	}
 
 	for i, tt := range tests {
