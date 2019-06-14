@@ -16,13 +16,26 @@ package medium
 // Output: [-1,-1]
 
 func searchRange(nums []int, target int) []int {
+	left := binarySearchLeft(nums, target)
+	if left == -1 {
+		return []int{-1, -1}
+	}
+
+	right := binarySearchRight(nums, target)
+
+	return []int{left, right}
+}
+
+func binarySearchLeft(nums []int, target int) (index int) {
+	if len(nums) == 0 {
+		return -1
+	}
+
 	low, high := 0, len(nums)-1
-	idx := -1
-	for low <= high {
+	for low < high {
 		mid := low + (high-low)/2
 		if nums[mid] == target {
-			idx = mid
-			break
+			high = mid
 		} else if nums[mid] > target {
 			high = mid - 1
 		} else {
@@ -30,19 +43,31 @@ func searchRange(nums []int, target int) []int {
 		}
 	}
 
-	first := idx
-	for first > 0 && nums[first-1] == nums[idx] {
-		first--
+	if nums[low] == target {
+		return low
+	}
+	return -1
+}
+
+func binarySearchRight(nums []int, target int) (index int) {
+	if len(nums) == 0 {
+		return -1
 	}
 
-	last := idx
-	if last != -1 {
-		for last < len(nums)-1 && nums[last+1] == nums[idx] {
-			last++
+	low, high := 0, len(nums)-1
+	for low <= high {
+		mid := low + (high-low)/2
+		if nums[mid] <= target {
+			low = mid + 1
+		} else {
+			high = mid - 1
 		}
 	}
 
-	return []int{first, last}
+	if nums[high] == target {
+		return high
+	}
+	return -1
 }
 
 // The official soloution:
