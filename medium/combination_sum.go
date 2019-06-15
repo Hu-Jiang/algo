@@ -49,8 +49,6 @@ func doCombination(candidates []int, target int, prevSum int, prev []int, ans *[
 	}
 
 	for i, v := range candidates {
-		prev = append(prev, v)
-		doCombination(candidates[i:], target, prevSum+v, prev, ans)
-		prev = prev[:len(prev)-1]
+		doCombination(candidates[i:], target, prevSum+v, append(prev, v), ans)
 	}
 }
