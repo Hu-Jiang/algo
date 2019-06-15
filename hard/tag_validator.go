@@ -208,7 +208,7 @@ func (s *stack) isEmpty() bool {
 
 func (s *stack) pop() (interface{}, error) {
 	if s.isEmpty() {
-		return nil, errors.New("destack: empty stack")
+		return nil, errors.New("pop: empty stack")
 	}
 	return s.s.Remove(s.s.Back()), nil
 }
