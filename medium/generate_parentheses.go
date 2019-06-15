@@ -44,13 +44,8 @@ func isValid(s string) bool {
 		case '(':
 			q.enqueue(r)
 		case ')':
-			if q.isEmpty() {
-				valid = false
-				break
-			}
-
-			v, _ := q.dequeue()
-			if v != '(' {
+			v, err := q.dequeue()
+			if err != nil || v != '(' {
 				valid = false
 				break
 			}
