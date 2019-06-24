@@ -122,17 +122,23 @@ func isMatch(s string, p string) bool {
 // }
 // Bottom-Up Variation:
 //
-// class Solution(object):
-//     def isMatch(self, text, pattern):
-//         dp = [[False] * (len(pattern) + 1) for _ in range(len(text) + 1)]
+// class Solution {
+//     public boolean isMatch(String text, String pattern) {
+//         boolean[][] dp = new boolean[text.length() + 1][pattern.length() + 1];
+//         dp[text.length()][pattern.length()] = true;
 //
-//         dp[-1][-1] = True
-//         for i in range(len(text), -1, -1):
-//             for j in range(len(pattern) - 1, -1, -1):
-//                 first_match = i < len(text) and pattern[j] in {text[i], '.'}
-//                 if j+1 < len(pattern) and pattern[j+1] == '*':
-//                     dp[i][j] = dp[i][j+2] or first_match and dp[i+1][j]
-//                 else:
-//                     dp[i][j] = first_match and dp[i+1][j+1]
-//
-//         return dp[0][0]
+//         for (int i = text.length(); i >= 0; i--){
+//             for (int j = pattern.length() - 1; j >= 0; j--){
+//                 boolean first_match = (i < text.length() &&
+//                                        (pattern.charAt(j) == text.charAt(i) ||
+//                                         pattern.charAt(j) == '.'));
+//                 if (j + 1 < pattern.length() && pattern.charAt(j+1) == '*'){
+//                     dp[i][j] = dp[i][j+2] || first_match && dp[i+1][j];
+//                 } else {
+//                     dp[i][j] = first_match && dp[i+1][j+1];
+//                 }
+//             }
+//         }
+//         return dp[0][0];
+//     }
+// }
