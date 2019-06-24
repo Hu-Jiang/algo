@@ -18,3 +18,13 @@ func (l *ListNode) String() string {
 
 	return s
 }
+
+func NewList(nums ...int) *ListNode {
+	var dummy ListNode
+	cursor := &dummy
+	for _, v := range nums {
+		cursor.Next = &ListNode{Val: v}
+		cursor = cursor.Next
+	}
+	return dummy.Next
+}
