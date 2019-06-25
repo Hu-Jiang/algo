@@ -6,72 +6,22 @@ import (
 )
 
 func TestReverseKGroup(t *testing.T) {
-	t.Run("k=0", func(t *testing.T) {
-		root := newList()
+	tests := []struct {
+		head *ListNode
+		k    int
+		want *ListNode
+	}{
+		{nil, 10, nil},
+		{NewList(1, 2, 3, 4, 5), 0, NewList(1, 2, 3, 4, 5)},
+		{NewList(1, 2, 3, 4, 5), 2, NewList(2, 1, 4, 3, 5)},
+		{NewList(1, 2, 3, 4, 5), 3, NewList(3, 2, 1, 4, 5)},
+		{NewList(1, 2, 3, 4, 5), 5, NewList(5, 4, 3, 2, 1)},
+	}
 
-		gotRoot := reverseKGroup(root, 0)
-
-		assertEqual(t, gotRoot, root)
-	})
-
-	t.Run("k=2", func(t *testing.T) {
-		root := newList()
-
-		wantRoot := &ListNode{Val: 2}
-		wantRoot.Next = &ListNode{Val: 1}
-		wantRoot.Next.Next = &ListNode{Val: 4}
-		wantRoot.Next.Next.Next = &ListNode{Val: 3}
-		wantRoot.Next.Next.Next.Next = &ListNode{Val: 5}
-
-		gotRoot := reverseKGroup(root, 2)
-
-		assertEqual(t, gotRoot, wantRoot)
-	})
-
-	t.Run("k=3", func(t *testing.T) {
-		root := newList()
-
-		wantRoot := &ListNode{Val: 3}
-		wantRoot.Next = &ListNode{Val: 2}
-		wantRoot.Next.Next = &ListNode{Val: 1}
-		wantRoot.Next.Next.Next = &ListNode{Val: 4}
-		wantRoot.Next.Next.Next.Next = &ListNode{Val: 5}
-
-		gotRoot := reverseKGroup(root, 3)
-
-		assertEqual(t, gotRoot, wantRoot)
-
-	})
-
-	t.Run("k=5", func(t *testing.T) {
-		root := newList()
-
-		wantRoot := &ListNode{Val: 5}
-		wantRoot.Next = &ListNode{Val: 4}
-		wantRoot.Next.Next = &ListNode{Val: 3}
-		wantRoot.Next.Next.Next = &ListNode{Val: 2}
-		wantRoot.Next.Next.Next.Next = &ListNode{Val: 1}
-
-		gotRoot := reverseKGroup(root, 5)
-
-		assertEqual(t, gotRoot, wantRoot)
-	})
-}
-
-func newList() *ListNode {
-	root := &ListNode{Val: 1}
-	root.Next = &ListNode{Val: 2}
-	root.Next.Next = &ListNode{Val: 3}
-	root.Next.Next.Next = &ListNode{Val: 4}
-	root.Next.Next.Next.Next = &ListNode{Val: 5}
-
-	return root
-}
-
-func assertListEqual(t *testing.T, got, want *ListNode) {
-	t.Helper()
-
-	if !reflect.DeepEqual(got, want) {
-		t.Fatalf("got: %v; want: %v", got, want)
+	for i, tt := range tests {
+		got := reverseKGroup(tt.head, tt.k)
+		if !reflect.DeepEqual(got, tt.want) {
+			t.Fatalf("%d. got %v, want %v", i, got, tt.want)
+		}
 	}
 }
