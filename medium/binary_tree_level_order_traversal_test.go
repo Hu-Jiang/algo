@@ -6,20 +6,25 @@ import (
 )
 
 func TestLevelOrder(t *testing.T) {
-	root := &TreeNode{Val: 3}
-	root.Left = &TreeNode{Val: 9}
-	root.Right = &TreeNode{Val: 20}
-	root.Right.Left = &TreeNode{Val: 15}
-	root.Right.Right = &TreeNode{Val: 7}
-
-	want := [][]int{
-		{3},
-		{9, 20},
-		{15, 7},
+	tests := []struct {
+		root *TreeNode
+		want [][]int
+	}{
+		{nil, nil},
+		{
+			NewPreorderTree(3, 9, -1, -1, 20, 15, -1, -1, 7),
+			[][]int{
+				{3},
+				{9, 20},
+				{15, 7},
+			},
+		},
 	}
 
-	got := levelOrder(root)
-	if !reflect.DeepEqual(got, want) {
-		t.Logf("got: %v; want: %v", got, want)
+	for i, tt := range tests {
+		got := levelOrder(tt.root)
+		if !reflect.DeepEqual(got, tt.want) {
+			t.Fatalf("#%d. got %v, want %v", i, got, tt.want)
+		}
 	}
 }

@@ -3,27 +3,19 @@ package easy
 import "testing"
 
 func TestTree2Str(t *testing.T) {
-	t.Run("test1", func(t *testing.T) {
-		root := &TreeNode{Val: 1}
-		root.Left = &TreeNode{Val: 2}
-		root.Right = &TreeNode{Val: 3}
-		root.Left.Left = &TreeNode{Val: 4}
+	tests := []struct {
+		t    *TreeNode
+		want string
+	}{
+		{nil, ""},
+		{NewPreorderTree(1, 2, 4, -1, -1, -1, 3), "1(2(4))(3)"},
+		{NewPreorderTree(1, 2, -1, 4, -1, -1, 3), "1(2()(4))(3)"},
+	}
 
-		got, want := tree2str(root), "1(2(4))(3)"
-		if got != want {
-			t.Fatalf("got: %v; want: %v", got, want)
+	for i, tt := range tests {
+		got := tree2str(tt.t)
+		if got != tt.want {
+			t.Fatalf("#%d. got %v, want %v", i, got, tt.want)
 		}
-	})
-
-	t.Run("test2", func(t *testing.T) {
-		root := &TreeNode{Val: 1}
-		root.Left = &TreeNode{Val: 2}
-		root.Right = &TreeNode{Val: 3}
-		root.Left.Right = &TreeNode{Val: 4}
-
-		got, want := tree2str(root), "1(2()(4))(3)"
-		if got != want {
-			t.Fatalf("got: %v; want: %v", got, want)
-		}
-	})
+	}
 }

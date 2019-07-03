@@ -3,15 +3,19 @@ package easy
 import "testing"
 
 func TestMaxDepth(t *testing.T) {
-	root := &TreeNode{Val: 3}
-	root.Left = &TreeNode{Val: 9}
-	root.Right = &TreeNode{Val: 20}
-	root.Right.Left = &TreeNode{Val: 15}
-	root.Right.Right = &TreeNode{Val: 7}
+	tests := []struct {
+		root *TreeNode
+		want int
+	}{
+		{nil, 0},
+		{NewPreorderTree(1), 1},
+		{NewPreorderTree(3, 9, -1, -1, 20, 15, -1, -1, 7), 3},
+	}
 
-	got := maxDepth(root)
-	want := 3
-	if got != want {
-		t.Fatalf("got: %v; want: %v", got, want)
+	for i, tt := range tests {
+		got := maxDepth(tt.root)
+		if got != tt.want {
+			t.Fatalf("#%d. got %v, want %v", i, got, tt.want)
+		}
 	}
 }

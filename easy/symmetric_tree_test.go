@@ -3,29 +3,18 @@ package easy
 import "testing"
 
 func TestSymmetricTree(t *testing.T) {
-	t.Run("should be symmetric", func(t *testing.T) {
-		root := &TreeNode{Val: 1}
-		root.Left = &TreeNode{Val: 2}
-		root.Right = &TreeNode{Val: 2}
-		root.Left.Left = &TreeNode{Val: 3}
-		root.Left.Right = &TreeNode{Val: 4}
-		root.Right.Left = &TreeNode{Val: 4}
-		root.Right.Right = &TreeNode{Val: 3}
+	tests := []struct {
+		root *TreeNode
+		want bool
+	}{
+		{NewPreorderTree(1, 2, 3, -1, -1, 4, -1, -1, 2, 4, -1, -1, 3), true},
+		{NewPreorderTree(1, 2, -1, 3, -1, -1, 2, -1, 3), false},
+	}
 
-		if !isSymmetric(root) {
-			t.Fatalf("got: %v; want: %v", isSymmetric(root), true)
+	for i, tt := range tests {
+		got := isSymmetric(tt.root)
+		if got != tt.want {
+			t.Fatalf("#%d. got %v, want %v", i, got, tt.want)
 		}
-	})
-
-	t.Run("should not be symmetric", func(t *testing.T) {
-		root := &TreeNode{Val: 1}
-		root.Left = &TreeNode{Val: 2}
-		root.Right = &TreeNode{Val: 2}
-		root.Left.Right = &TreeNode{Val: 3}
-		root.Right.Right = &TreeNode{Val: 3}
-
-		if isSymmetric(root) {
-			t.Fatalf("got: %v; want: %v", isSymmetric(root), false)
-		}
-	})
+	}
 }
