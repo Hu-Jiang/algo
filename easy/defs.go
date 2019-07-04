@@ -1,6 +1,7 @@
 package easy
 
 import (
+	"fmt"
 	"strconv"
 )
 
@@ -38,6 +39,10 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+func (t *TreeNode) String() string {
+	return fmt.Sprintf("preorder: %v", PreorderArr(t))
+}
+
 // NewPreorderTree returns preorder tree relate to nums, nums must has not Ambiguity.
 // -1 in nums represents child is null.
 //
@@ -57,28 +62,53 @@ type TreeNode struct {
 //        / \
 //       2   3
 func NewPreorderTree(nums ...int) *TreeNode {
-	var root *TreeNode
-	pos := 0
-	constructTree(&root, nums, &pos, len(nums))
+	return (&preorderTree{nums}).constructTree()
+}
+
+type preorderTree struct {
+	nums []int
+}
+
+func (p *preorderTree) constructTree() *TreeNode {
+	if len(p.nums) == 0 {
+		return nil
+	}
+
+	if p.nums[0] == -1 {
+		p.nums = p.nums[1:]
+		return nil
+	}
+
+	root := &TreeNode{Val: p.nums[0]}
+	p.nums = p.nums[1:]
+	root.Left = p.constructTree()
+	root.Right = p.constructTree()
 	return root
 }
 
-func constructTree(t **TreeNode, nums []int, pos *int, len int) {
-	if *pos >= len {
-		return
-	}
-
-	if nums[*pos] == -1 {
-		*t = nil
-		*pos++
-		return
-	}
-
-	*t = &TreeNode{Val: nums[*pos]}
-	*pos++
-	constructTree(&((*t).Left), nums, pos, len)
-	constructTree(&((*t).Right), nums, pos, len)
-}
+// My another constructTree version:
+//
+// Invoke example:
+// var root *TreeNode
+// pos := 0
+// constructTree_v1(&root, nums, &pos, len(nums))
+//
+// func constructTree_v1(t **TreeNode, nums []int, pos *int, len int) {
+// 	if *pos >= len {
+// 		return
+// 	}
+//
+// 	if nums[*pos] == -1 {
+// 		*t = nil
+// 		*pos++
+// 		return
+// 	}
+//
+// 	*t = &TreeNode{Val: nums[*pos]}
+// 	*pos++
+// 	constructTree_v1(&((*t).Left), nums, pos, len)
+// 	constructTree_v1(&((*t).Right), nums, pos, len)
+// }
 
 func PreorderArr(t *TreeNode) []int {
 	if t == nil {
