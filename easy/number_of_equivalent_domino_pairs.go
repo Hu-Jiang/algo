@@ -40,3 +40,37 @@ func isDomino(a, b []int) bool {
 	}
 	return false
 }
+
+// Answers of other people of contest:
+//
+// class Solution {
+// 	public:
+// 		int numEquivDominoPairs(vector<vector<int>>& dominoes) {
+// 			map<pair<int, int>, int> freq;
+// 			long long total = 0;
+//
+// 			for (vector<int> domino : dominoes) {
+// 				if (domino[0] > domino[1])
+// 					swap(domino[0], domino[1]);
+//
+// 				total += freq[make_pair(domino[0], domino[1])]++;
+// 			}
+//
+// 			return total;
+// 		}
+// 	};
+//
+// Answer of other people in discuss:
+//
+// public int numEquivDominoPairs(int[][] dominoes) {
+// 	Map<Integer, Integer> count = new HashMap<>();
+// 	int res = 0;
+// 	for (int[] d : dominoes) {
+// 		int k = Math.min(d[0], d[1]) * 10 + Math.max(d[0], d[1]);
+// 		count.put(k, count.getOrDefault(k, 0) + 1);
+// 	}
+// 	for (int v : count.values()) {
+// 		res += v * (v - 1) / 2;
+// 	}
+// 	return res;
+// }
