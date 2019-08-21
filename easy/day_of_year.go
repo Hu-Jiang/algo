@@ -36,6 +36,7 @@ func dayOfYear(date string) int {
 	year, month, day, err := strToYYMMDD(date)
 	if err != nil {
 		log.Printf("strToYYMMDD err: %v", err)
+		return 0
 	}
 
 	daysOfMonth := [13]int{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
