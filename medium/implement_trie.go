@@ -45,6 +45,7 @@ func (t *Trie) StartsWith(prefix string) bool {
 	return node != nil
 }
 
+// prefixNode returns node related with prefix or nil if this node is not exist.
 func (t *Trie) prefixNode(prefix string) *Trie {
 	for _, v := range prefix {
 		if t.next[v] == nil {
