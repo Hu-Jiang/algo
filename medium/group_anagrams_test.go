@@ -22,11 +22,11 @@ func TestGroupAnagrams(t *testing.T) {
 
 	for i, tt := range tests {
 		got := groupAnagrams(tt.strs)
-		helper(t, i, got, tt.want)
+		assertGroupAngrams(t, i, got, tt.want)
 	}
 }
 
-func helper(t *testing.T, caseNum int, got, want [][]string) {
+func assertGroupAngrams(t *testing.T, caseNum int, got, want [][]string) {
 	t.Helper()
 
 	if len(got) != len(want) {
