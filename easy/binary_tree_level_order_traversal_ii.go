@@ -19,6 +19,12 @@ package easy
 // ]
 
 func levelOrderBottom(root *TreeNode) [][]int {
+	res := levelOrderUp(root)
+	reverseSlice(res)
+	return res
+}
+
+func levelOrderUp(root *TreeNode) [][]int {
 	if root == nil {
 		return nil
 	}
@@ -42,12 +48,13 @@ func levelOrderBottom(root *TreeNode) [][]int {
 		}
 		res = append(res, tmp)
 	}
-
-	for i := 0; i < len(res)/2; i++ {
-		res[i], res[len(res)-1-i] = res[len(res)-1-i], res[i]
-	}
-
 	return res
+}
+
+func reverseSlice(s [][]int) {
+	for i := 0; i < len(s)/2; i++ {
+		s[i], s[len(s)-1-i] = s[len(s)-1-i], s[i]
+	}
 }
 
 // Trick:
