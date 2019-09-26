@@ -22,7 +22,7 @@ package easy
 // Follow up:
 // Coud you solve it without converting the integer to a string?
 
-func isPalindrome(x int) bool {
+func isPalindromeNumber(x int) bool {
 	if x < 0 {
 		return false
 	}

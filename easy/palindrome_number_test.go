@@ -2,7 +2,7 @@ package easy
 
 import "testing"
 
-func TestIsPalindrome(t *testing.T) {
+func TestIsPalindromeNumber(t *testing.T) {
 	tests := []struct {
 		input int
 		want  bool
@@ -14,7 +14,7 @@ func TestIsPalindrome(t *testing.T) {
 	}
 
 	for i, tt := range tests {
-		got := isPalindrome(tt.input)
+		got := isPalindromeNumber(tt.input)
 		if got != tt.want {
 			t.Fatalf("%d: got: %v; want: %v", i, got, tt.want)
 		}
