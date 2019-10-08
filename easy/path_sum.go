@@ -30,14 +30,14 @@ func doHasPathSum(node *TreeNode, curSum, wantSum int) bool {
 		return false
 	}
 
-	if isLeft(node) && curSum+node.Val == wantSum {
+	if isLeaf(node) && curSum+node.Val == wantSum {
 		return true
 	}
 	return doHasPathSum(node.Left, curSum+node.Val, wantSum) ||
 		doHasPathSum(node.Right, curSum+node.Val, wantSum)
 }
 
-func isLeft(node *TreeNode) bool {
+func isLeaf(node *TreeNode) bool {
 	if node == nil {
 		return false
 	}
