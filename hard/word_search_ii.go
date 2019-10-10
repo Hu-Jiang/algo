@@ -47,7 +47,7 @@ func findWords(board [][]byte, words []string) []string {
 	return ss.result()
 }
 
-// generateVisit return a 2'D array which flag a position whether was visited.
+// generateVisit returns a 2'D array which flag a position whether was visited.
 func generateVisit(len int) [][]bool {
 	visit := make([][]bool, len)
 	for i := range visit {
@@ -56,7 +56,7 @@ func generateVisit(len int) [][]bool {
 	return visit
 }
 
-// pretreatBoard return a newBoard used 0 to surround board.
+// pretreatBoard returns a newBoard used 0 to surround board.
 func pretreatBoard(board [][]byte) (newBoard [][]byte) {
 	row := len(board)
 	col := len(board[0])
