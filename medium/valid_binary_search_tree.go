@@ -43,7 +43,7 @@ func helper(root *TreeNode, low, high int64) bool {
 	return helper(root.Left, low, int64(root.Val)) && helper(root.Right, int64(root.Val), high)
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Recursion
 //

@@ -74,7 +74,7 @@ func splitNameContent(file string) (name, content string) {
 	return
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach #1 Brute Force [Time Limit Exceeded]
 //

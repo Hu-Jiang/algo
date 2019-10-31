@@ -24,7 +24,7 @@ func deleteDuplicates(head *ListNode) *ListNode {
 	return head
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Straight-Forward Approach
 //

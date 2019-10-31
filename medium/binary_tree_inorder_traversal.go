@@ -28,7 +28,7 @@ func traversal(root *TreeNode, a *[]int) {
 	traversal(root.Right, a)
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Recursive Approach
 //

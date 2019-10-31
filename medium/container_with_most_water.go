@@ -40,7 +40,7 @@ func area(hl, hr, width int) int {
 	}
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Brute Force
 //

@@ -51,7 +51,7 @@ func listToArray(head *ListNode) []int {
 	return res
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Recursion
 //

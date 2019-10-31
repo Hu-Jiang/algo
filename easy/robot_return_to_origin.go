@@ -50,7 +50,7 @@ func judgeCircle(moves string) bool {
 	return false
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach #1: Simulation
 // class Solution {

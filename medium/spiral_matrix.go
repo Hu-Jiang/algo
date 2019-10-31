@@ -56,7 +56,7 @@ func spiralOrder(matrix [][]int) []int {
 	return ans
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Simulation
 //

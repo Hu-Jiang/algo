@@ -34,7 +34,7 @@ func generate(numRows int) [][]int {
 	return res
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Dynamic Programming
 // class Solution:

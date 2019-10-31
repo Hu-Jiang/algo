@@ -81,7 +81,7 @@ func traversalNode(root *TreeNode, v int) (parent, current *TreeNode) {
 	return nil, nil
 }
 
-// A recursion soloution from discuss in leetcode of this problem:
+// A recursion solution from discuss in leetcode of this problem:
 //
 // Intuition
 // As I keep saying in my "courses",

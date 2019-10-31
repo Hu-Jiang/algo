@@ -72,7 +72,7 @@ func preorderTraversal_v1(t *TreeNode, res *[]int) {
 	preorderTraversal_v1(t.Right, res)
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Recursion
 //

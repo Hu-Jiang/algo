@@ -46,7 +46,7 @@ func maxInt(a, b int) int {
 	return b
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Backtracking
 //

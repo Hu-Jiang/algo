@@ -87,7 +87,7 @@ func equal(a, b map[rune]int) bool {
 	return true
 }
 
-// Another soloution from leetcode discuss:
+// Another solution from leetcode discuss:
 //
 // func isScramble(s1 string, s2 string) bool {
 //

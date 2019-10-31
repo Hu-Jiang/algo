@@ -44,7 +44,7 @@ func nextAppend(prefix string, remainDigits string, ans *[]string) {
 	}
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Backtracking
 //

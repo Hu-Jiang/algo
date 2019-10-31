@@ -66,7 +66,7 @@ func convert(s string, numRows int) string {
 	return string(ans)
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Sort by Row
 //

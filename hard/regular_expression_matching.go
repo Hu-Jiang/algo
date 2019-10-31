@@ -63,7 +63,7 @@ func isMatch(s string, p string) bool {
 	}
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Recursion
 // class Solution {

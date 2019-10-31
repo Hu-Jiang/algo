@@ -43,7 +43,7 @@ func maxVal(a, b int) int {
 	return b
 }
 
-// The official soloution:
+// The official solution:
 //
 // 方法 1：暴力
 //

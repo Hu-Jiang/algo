@@ -59,7 +59,7 @@ func (this *WordDictionary) Search(word string) bool {
 	return this.isWord
 }
 
-// A Java soloution from discuss in leetcode:
+// A Java solution from discuss in leetcode:
 //
 // public class WordDictionary {
 //

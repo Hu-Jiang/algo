@@ -65,7 +65,7 @@ func contain(src, dst map[byte]int) bool {
 	return true
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Sliding Window
 //

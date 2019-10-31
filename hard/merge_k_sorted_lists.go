@@ -64,7 +64,7 @@ func findMinIdx(lists []*ListNode) int {
 	return minIdx
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Brute Force
 //
@@ -85,7 +85,7 @@ func findMinIdx(lists []*ListNode) int {
 //             point = point.next
 //         return head.next
 //
-// Approach 2: Compare one by one [no official code, but my soloution just implements it]
+// Approach 2: Compare one by one [no official code, but my solution just implements it]
 //
 // Approach 3: Optimize Approach 2 by Priority Queue
 //

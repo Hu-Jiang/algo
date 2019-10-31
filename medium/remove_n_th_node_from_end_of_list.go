@@ -37,7 +37,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	return dummyHead.Next
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Two pass algorithm
 //

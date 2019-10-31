@@ -36,7 +36,7 @@ func isInterleave(s1, s2, s3 string) bool {
 	return dp[len(dp)-1][len(dp[0])-1]
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Brute Force
 //

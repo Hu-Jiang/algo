@@ -53,7 +53,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return sentinel.Next
 }
 
-// The official soloution:
+// The official solution:
 //
 // public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 //     ListNode dummyHead = new ListNode(0);

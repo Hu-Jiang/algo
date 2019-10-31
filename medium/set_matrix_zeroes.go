@@ -83,7 +83,7 @@ func setZeroes(matrix [][]int) {
 	}
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Additional Memory Approach
 //

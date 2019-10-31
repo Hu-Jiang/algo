@@ -37,7 +37,7 @@ func longestCommonPrefix(strs []string) string {
 	return strs[0][:i-1]
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Horizontal scanning
 //

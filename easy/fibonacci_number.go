@@ -44,7 +44,7 @@ func fib(n int) int {
 	return cur
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Recursion
 //

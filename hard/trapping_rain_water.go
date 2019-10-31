@@ -54,7 +54,7 @@ func minHeight(h1, h2 int) int {
 	return h2
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Brute force [no code]
 //

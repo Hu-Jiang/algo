@@ -57,7 +57,7 @@ func doIsSymmetric(t1, t2 *TreeNode) bool {
 // 		doIsSymmetric(t1.Right, t2.Left)
 // }
 //
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Recursive
 //

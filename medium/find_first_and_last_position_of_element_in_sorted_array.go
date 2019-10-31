@@ -70,7 +70,7 @@ func binarySearchRight(nums []int, target int) (index int) {
 	return -1
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Linear Scan
 //

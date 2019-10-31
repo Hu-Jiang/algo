@@ -33,7 +33,7 @@ func partition(head *ListNode, x int) *ListNode {
 	return dummyHead.Next
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Two Pointer Approach
 //

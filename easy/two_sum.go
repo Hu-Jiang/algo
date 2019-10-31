@@ -24,7 +24,7 @@ func twoSum(nums []int, target int) (indices []int) {
 	return
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Brute Force
 //

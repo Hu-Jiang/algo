@@ -40,6 +40,6 @@ func isPalindrome(s string) bool {
 	return true
 }
 
-// The official soloution:
+// The official solution:
 // [https://leetcode.com/articles/longest-palindromic-substring/]
 // NOTE: pay attention to dynamic programming

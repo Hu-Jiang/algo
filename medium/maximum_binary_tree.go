@@ -57,7 +57,7 @@ func GetMaxValueIndex(nums []int, l, r int) int { // [l..r]
 // 2. use max value be the root
 // 3. l..max_index-1 be left root, max_index+1..r be right root
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Recursive Solution
 //

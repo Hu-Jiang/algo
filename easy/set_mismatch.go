@@ -39,7 +39,7 @@ func findErrorNums(nums []int) []int {
 	return ans
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Brute Force
 //

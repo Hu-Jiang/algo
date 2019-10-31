@@ -60,7 +60,7 @@ func merge(nums1 []int, nums2 []int) []int {
 	return ans
 }
 
-// The official soloution:
+// The official solution:
 //
 // Recursive Approach: Time complexity: O(log(min(m,n))).
 //

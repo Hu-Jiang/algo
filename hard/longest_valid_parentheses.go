@@ -58,7 +58,7 @@ func longestValidParentheses(s string) int {
 	return maxMatch
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Brute Force
 //

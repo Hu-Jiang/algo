@@ -213,7 +213,7 @@ func (s *stack) pop() (interface{}, error) {
 	return s.s.Remove(s.s.Back()), nil
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Stack
 //

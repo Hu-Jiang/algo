@@ -92,7 +92,7 @@ func (q *queue) dequeue() (interface{}, error) {
 	return q.l.Remove(q.l.Back()), nil
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Brute Force
 //

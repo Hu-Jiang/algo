@@ -36,7 +36,7 @@ func reverseBetween(head *ListNode, m int, n int) *ListNode {
 	return head
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Recursion
 //

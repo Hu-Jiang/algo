@@ -75,7 +75,7 @@ func minDeletionSize(A []string) int {
 	return len(A[0]) - maxSorted
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Dynamic Programming
 //

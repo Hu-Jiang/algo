@@ -56,7 +56,7 @@ func (t *Trie) prefixNode(prefix string) *Trie {
 	return t
 }
 
-// The official soloution:
+// The official solution:
 //
 // Trie node structure:
 // Image location: [/image/solutions/implement_trie.jpeg]

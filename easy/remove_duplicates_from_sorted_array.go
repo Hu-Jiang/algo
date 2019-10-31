@@ -44,7 +44,7 @@ func removeDuplicates(nums []int) int {
 	return len(nums)
 }
 
-// The official soloution:
+// The official solution:
 //
 // Approach 1: Two Pointers
 //
