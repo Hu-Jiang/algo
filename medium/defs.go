@@ -116,17 +116,17 @@ func PreorderArr(t *TreeNode) []int {
 	}
 
 	var res []int
-	preorderTraversal(t, &res)
+	doPreorderTraversal(t, &res)
 	return res
 }
 
-func preorderTraversal(t *TreeNode, res *[]int) {
+func doPreorderTraversal(t *TreeNode, res *[]int) {
 	if t == nil {
 		*res = append(*res, -1)
 		return
 	}
 	*res = append(*res, t.Val)
 
-	preorderTraversal(t.Left, res)
-	preorderTraversal(t.Right, res)
+	doPreorderTraversal(t.Left, res)
+	doPreorderTraversal(t.Right, res)
 }
