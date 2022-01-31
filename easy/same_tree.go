@@ -1,7 +1,5 @@
 package easy
 
-import "reflect"
-
 // Given two binary trees, write a function to check if they
 // are the same or not.
 //
@@ -47,9 +45,9 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 }
 
 // another version of mine:
-func isSameTree_v1(p *TreeNode, q *TreeNode) bool {
-	return reflect.DeepEqual(PreorderArr_v1(p), PreorderArr_v1(q))
-}
+// func isSameTree_v1(p *TreeNode, q *TreeNode) bool {
+// 	return reflect.DeepEqual(PreorderArr_v1(p), PreorderArr_v1(q))
+// }
 
 func PreorderArr_v1(t *TreeNode) []int {
 	if t == nil {

@@ -24,7 +24,7 @@ func subsets(nums []int) [][]int {
 		return nil
 	}
 
-	res := [][]int{[]int{}}
+	res := [][]int{{}}
 	for k := 1; k <= len(nums); k++ {
 		res = append(res, combineK(nums, k)...)
 	}

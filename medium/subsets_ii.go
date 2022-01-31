@@ -59,7 +59,6 @@ func (s *sets) generate(idx int, prev []int) {
 	}
 
 	s.append(prev)
-	return
 }
 
 func (s *sets) append(set []int) {

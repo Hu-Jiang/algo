@@ -13,25 +13,25 @@ func TestSubsetsWithDup(t *testing.T) {
 		{
 			nums: nil,
 			want: [][]int{
-				[]int{},
+				{},
 			},
 		},
 		{
 			nums: []int{1},
 			want: [][]int{
-				[]int{1},
-				[]int{},
+				{1},
+				{},
 			},
 		},
 		{
 			nums: []int{1, 2, 2},
 			want: [][]int{
-				[]int{1, 2, 2},
-				[]int{1, 2},
-				[]int{1},
-				[]int{2, 2},
-				[]int{2},
-				[]int{},
+				{1, 2, 2},
+				{1, 2},
+				{1},
+				{2, 2},
+				{2},
+				{},
 			},
 		},
 	}

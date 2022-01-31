@@ -11,17 +11,17 @@ func TestSolveNQueues(t *testing.T) {
 		want [][]string
 	}{
 		{0, [][]string{}},
-		{1, [][]string{[]string{"Q"}}},
+		{1, [][]string{{"Q"}}},
 		{2, [][]string{}},
 		{3, [][]string{}},
 		{4, [][]string{
-			[]string{
+			{
 				".Q..",
 				"...Q",
 				"Q...",
 				"..Q.",
 			},
-			[]string{
+			{
 				"..Q.",
 				"Q...",
 				"...Q",

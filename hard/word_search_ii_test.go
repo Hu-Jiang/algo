@@ -17,18 +17,18 @@ func TestFindWords(t *testing.T) {
 		},
 		{
 			board: [][]byte{
-				[]byte{'o', 'a', 'a', 'n'},
-				[]byte{'e', 't', 'a', 'e'},
-				[]byte{'i', 'h', 'k', 'r'},
-				[]byte{'i', 'f', 'l', 'v'},
+				{'o', 'a', 'a', 'n'},
+				{'e', 't', 'a', 'e'},
+				{'i', 'h', 'k', 'r'},
+				{'i', 'f', 'l', 'v'},
 			},
 			words: []string{"oath", "pea", "eat", "rain"},
 			want:  []string{"oath", "eat"},
 		},
 		{
 			board: [][]byte{
-				[]byte{'a', 'b'},
-				[]byte{'a', 'a'},
+				{'a', 'b'},
+				{'a', 'a'},
 			},
 			words: []string{"aba", "baa", "bab", "aaab", "aaa", "aaaa", "aaba"},
 			want:  []string{"aaa", "aaab", "aba", "baa", "aaba"},

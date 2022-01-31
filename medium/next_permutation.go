@@ -46,8 +46,6 @@ func nextPermutation(nums []int) {
 	for l, r := i, len(nums)-1; l < r; l, r = l+1, r-1 {
 		nums[l], nums[r] = nums[r], nums[l]
 	}
-
-	return
 }
 
 // The official solution:

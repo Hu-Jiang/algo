@@ -77,10 +77,7 @@ func (q *queue) enqueue(v interface{}) {
 }
 
 func (q *queue) isEmpty() bool {
-	if q.l.Len() == 0 {
-		return true
-	}
-	return false
+	return q.l.Len() == 0
 }
 
 func (q *queue) dequeue() (interface{}, error) {

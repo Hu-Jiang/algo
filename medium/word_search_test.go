@@ -11,8 +11,8 @@ func TestExist(t *testing.T) {
 		want  bool
 	}{
 		{nil, "", false},
-		{[][]byte{[]byte{'a'}}, "a", true},
-		{[][]byte{[]byte{'a', 'a'}}, "aaa", false},
+		{[][]byte{{'a'}}, "a", true},
+		{[][]byte{{'a', 'a'}}, "aaa", false},
 		{
 			[][]byte{
 				{'A', 'B', 'C', 'E'},

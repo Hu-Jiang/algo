@@ -48,8 +48,6 @@ func dfsMatch(board [][]byte, word string, i, j int) bool {
 		(i+1 < len(board) && dfsMatch(board, word[1:], i+1, j)) ||
 		(i-1 >= 0 && dfsMatch(board, word[1:], i-1, j))
 	board[i][j] = tmp
-	if isMatched {
-		return true
-	}
-	return false
+
+	return isMatched
 }

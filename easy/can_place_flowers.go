@@ -35,10 +35,7 @@ func canPlaceFlowers(flowerbed []int, n int) bool {
 			n--
 		}
 	}
-	if n > 0 {
-		return false
-	}
-	return true
+	return n <= 0
 }
 
 // Trick:

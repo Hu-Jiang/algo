@@ -32,7 +32,7 @@ func lengthOfLongestSubstring(s string) int {
 
 		var tmp string
 		for j := i; j < len(s); j++ {
-			if strings.IndexRune(tmp, rune(s[j])) != -1 {
+			if strings.ContainsRune(tmp, rune(s[j])) {
 				break
 			}
 			tmp += string(s[j])

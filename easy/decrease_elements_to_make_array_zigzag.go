@@ -30,7 +30,7 @@ func movesToMakeZigzag(nums []int) int {
 
 	const (
 		even Parity = 0
-		odd         = 1
+		odd  Parity = 1
 	)
 
 	decSum := func(nums []int, p Parity) (decSum int) {

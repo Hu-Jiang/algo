@@ -19,10 +19,7 @@ func isPerfectSquare(num int) bool {
 		i++
 	}
 
-	if (i-1)*(i-1) == num {
-		return true
-	}
-	return false
+	return (i-1)*(i-1) == num
 }
 
 // Trick: think binary search

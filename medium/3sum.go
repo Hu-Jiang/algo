@@ -94,13 +94,11 @@ func threeSum_v2(nums []int) [][]int {
 		}
 		for j := i + 1; j < l; {
 			if nums[i]+nums[j] > 0 {
-				j = l
 				break
 			}
 			for k := j + 1; k < l; {
 				sum := nums[i] + nums[j] + nums[k]
 				if sum > 0 {
-					k = l
 					break
 				}
 				if sum == 0 {

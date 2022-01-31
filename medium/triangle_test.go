@@ -15,10 +15,10 @@ func TestMinimumTotal(t *testing.T) {
 		},
 		{
 			triangle: [][]int{
-				[]int{2},
-				[]int{3, 4},
-				[]int{6, 5, 7},
-				[]int{4, 1, 8, 3},
+				{2},
+				{3, 4},
+				{6, 5, 7},
+				{4, 1, 8, 3},
 			},
 			want: 11,
 		},

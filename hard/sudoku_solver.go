@@ -42,10 +42,7 @@ func doSolveSudoku(board [][]byte) bool {
 		}
 	}
 
-	if isValidSudoku(board) {
-		return true
-	}
-	return false
+	return isValidSudoku(board)
 }
 
 func isValidSudoku(board [][]byte) bool {

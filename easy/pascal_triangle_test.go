@@ -17,17 +17,17 @@ func TestGenerate(t *testing.T) {
 		{
 			numRows: 1,
 			want: [][]int{
-				[]int{1},
+				{1},
 			},
 		},
 		{
 			numRows: 5,
 			want: [][]int{
-				[]int{1},
-				[]int{1, 1},
-				[]int{1, 2, 1},
-				[]int{1, 3, 3, 1},
-				[]int{1, 4, 6, 4, 1},
+				{1},
+				{1, 1},
+				{1, 2, 1},
+				{1, 3, 3, 1},
+				{1, 4, 6, 4, 1},
 			},
 		},
 	}

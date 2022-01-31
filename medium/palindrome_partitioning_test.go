@@ -17,8 +17,8 @@ func TestPartitionString(t *testing.T) {
 		{
 			s: "aab",
 			want: [][]string{
-				[]string{"a", "a", "b"},
-				[]string{"aa", "b"},
+				{"a", "a", "b"},
+				{"aa", "b"},
 			},
 		},
 	}

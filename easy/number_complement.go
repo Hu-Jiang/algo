@@ -34,7 +34,7 @@ func findComplement(num int) int {
 			}
 		}
 	}
-	if flag == false { // num == 0
+	if !flag { // num == 0
 		return 1
 	}
 
