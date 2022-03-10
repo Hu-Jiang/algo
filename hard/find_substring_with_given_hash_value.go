@@ -1,4 +1,4 @@
-package medium
+package hard
 
 // The hash of a 0-indexed string s of length k, given integers p and m, is computed using the following function:
 //
